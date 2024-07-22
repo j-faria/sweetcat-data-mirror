@@ -3,6 +3,8 @@ name: CI
 on:
   push:
   workflow_dispatch:
+  schedule:
+    - cron: "8 0 * * *"
 
 jobs:
 

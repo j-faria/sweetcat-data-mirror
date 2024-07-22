@@ -12,7 +12,7 @@ jobs:
     - name: wget
       uses: wei/wget@v1
       with:
-        args: -O SWEET_cat.csv http://sweetcat.iastro.pt/catalog/SWEETCAT_Dataframe.csv
+        args: -O SWEET_cat.csv --timeout=20 http://sweetcat.iastro.pt/catalog/SWEETCAT_Dataframe.csv
 
     - name: add & commit
       uses: EndBug/add-and-commit@v9

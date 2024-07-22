@@ -25,6 +25,6 @@ jobs:
     - name: add & commit
       uses: EndBug/add-and-commit@v9
       with:
-        add: "SWEET_cat.csv --force"
+        add: "SWEET_cat.csv"
         cwd: '/home/runner/work/sweetcat-data-mirror/sweetcat-data-mirror'
         

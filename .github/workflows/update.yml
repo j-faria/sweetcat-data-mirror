@@ -15,7 +15,9 @@ jobs:
         args: -O SWEET_cat.csv --timeout=20 http://sweetcat.iastro.pt/catalog/SWEETCAT_Dataframe.csv
 
     - name: pwd
-      run: pwd
+      run: |
+        pwd
+        ls
 
     - name: add & commit
       uses: EndBug/add-and-commit@v9

@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  workflow_dispatch:
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+  
+    - uses: actions/checkout@v4
+    
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: -O SWEET_cat.csv http://sweetcat.iastro.pt/catalog/SWEETCAT_Dataframe.csv
+
+    - name: add & commit
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: "SWEET_cat.csv"
+        

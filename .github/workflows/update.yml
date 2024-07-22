@@ -8,23 +8,24 @@ jobs:
 
   update-file:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
     steps:
-  
-    - uses: actions/checkout@v4
-    
-    - name: wget
-      uses: wei/wget@v1
-      with:
-        args: -O SWEET_cat.csv --timeout=20 http://sweetcat.iastro.pt/catalog/SWEETCAT_Dataframe.csv
+      - uses: actions/checkout@v4
+      
+      - name: wget
+        uses: wei/wget@v1
+        with:
+          args: -O SWEET_cat.csv --timeout=20 http://sweetcat.iastro.pt/catalog/SWEETCAT_Dataframe.csv
 
-    - name: pwd
-      run: |
-        pwd
-        ls
+      - name: pwd
+        run: |
+          pwd
+          ls
 
-    - name: add & commit
-      uses: EndBug/add-and-commit@v9
-      with:
-        add: "SWEET_cat.csv"
-        cwd: '/home/runner/work/sweetcat-data-mirror/sweetcat-data-mirror'
+      - name: add & commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '[ "SWEET_cat.csv" ]'
         

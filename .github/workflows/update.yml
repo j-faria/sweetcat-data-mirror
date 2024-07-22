@@ -1,8 +1,11 @@
 name: CI
 
 on:
+  push:
   workflow_dispatch:
+
 jobs:
+
   update-file:
     runs-on: ubuntu-latest
     steps:
